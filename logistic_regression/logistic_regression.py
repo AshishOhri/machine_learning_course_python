@@ -57,18 +57,17 @@ def cost_fn(theta,X,y):
     return ((-1/m)*np.sum(y.T@np.log(h+eps)+(1-y).T@(np.log(1-h+eps))))
 def grad_fn(theta,X,y):
     h=hyp_fn(theta,X)
-    
     return((0.001/m)*(X.T@(h-y)))
 
 theta=np.zeros((n,1))
 print('Initial Cost: ',cost_fn(theta,X,y))
 array=[]
 input('Press enter to continue..')
-iterations=6000
+iterations=500000
 for i in range(iterations):
     array.append(cost_fn(theta,X,y))
     print("Cost/Error: ",cost_fn(theta,X,y))
     theta-=grad_fn(theta,X,y)
 print("Theta: ",theta)
-plt.scatter([i for i in range(1,iterations+1)],array)
+plt.plot([i for i in range(1,iterations+1)],array)
 plt.show()
