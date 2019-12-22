@@ -30,7 +30,7 @@ plt.ylabel('Profit in $10000s')
 plt.plot(X,y,'rx') # plotting the data
 plt.show()
 n,m=X.shape
-# Note: here m=97 i.e. there are 97 training examples withh 97 outputs and 1 feature
+# Note: here m=97 i.e. there are 97 training examples with 97 outputs and 1 feature
 z=np.ones((m,1)).T # shape: 1X97
 X=np.concatenate((z,X),axis=0)
 n,m=X.shape
