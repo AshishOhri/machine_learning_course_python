@@ -65,11 +65,12 @@ print('Initial Cost: ',cost_fn(theta,X,y))
 array=[]
 input('Press enter to continue..')
 iterations=50
-for i in range(iterations):
+for i in range(iterations): # Performing normal gradient descent for 50 iterations
     array.append(cost_fn(theta,X,y))
     print("Cost/Error: ",cost_fn(theta,X,y))
     theta-=grad_fn(theta,X,y)
 print("Theta: ",theta)
+plt.figure(figsize=(10,7))
 plt.title('Accuracy for 50 iterations')
 plt.xlabel('Number of iterations')
 plt.ylabel('Accuracy')
