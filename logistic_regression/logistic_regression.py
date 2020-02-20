@@ -52,7 +52,7 @@ def hyp_fn(theta,X):
     return (1/(1+np.exp(-x))) # sigmoid
 def cost_fn(theta,X,y):
     h=hyp_fn(theta,X)
-    eps=np.finfo(float).eps # tdeal with log(0)
+    eps=np.finfo(float).eps # to deal with log(0)
     #print(eps)
     return ((-0.001/m)*np.sum(y.T@np.log(h+eps)+(1-y).T@(np.log(1-h+eps))))
 def grad_fn(theta,X,y):
