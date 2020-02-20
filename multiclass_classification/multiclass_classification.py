@@ -13,9 +13,9 @@ X=f['X']
 y=f['y']
 plt.rcParams['image.cmap']='gray' # to show the plot as grayscale
 print("MNIST Data")
-fig,ax=plt.subplots(10,10)
 print('Shape of X: ',X.shape,'\nShape of y: ',y.shape)
-for i in range(10):
+fig,ax=plt.subplots(10,10)
+for i in range(10): # 10 by 10 randomized digit plot
     for j in range(10):
         integer=random.randint(0,4999)
         ax[i,j].imshow(X[integer].reshape(20,20).T)
@@ -25,7 +25,7 @@ input("Press enter to continue..")
 
 def hyp_fn(theta,X):
     result=X@theta
-    return 1/(1+np.exp(result)) # sigmoid function
+    return 1/(1+np.exp(-result)) # sigmoid function
 def cost_fn(theta,X,y,lamb=0):
     theta=theta.reshape(-1,1)
     h=hyp_fn(theta,X)
