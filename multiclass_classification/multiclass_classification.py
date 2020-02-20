@@ -41,7 +41,7 @@ X=np.append(z,X,axis=1)
 m,n=X.shape
 lamb=0.1
 num_labels=10 # 10 digits to predict
-theta=np.zeros((n,num_labels)) # 10 set of 401 X 1 weights exist for each digit
+theta=np.zeros((n,num_labels)) # 10 set of 401 X 1 weights, where weight exists for each digit
 print('Initial Cost: ',cost_fn(theta[:,0],X,y,lamb))
 input('Press enter to continue..')
 for i in range(num_labels):
